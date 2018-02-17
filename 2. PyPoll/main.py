@@ -2,7 +2,7 @@
 import csv
 
 #determine the file name
-file_name = 'election_data_2.csv'
+file_name = 'election_data_1.csv'
 
 #creating an empty dictionary for the candidates
 candidates = {}
@@ -31,36 +31,36 @@ with open(file_name, newline='') as csvfile:
             candidates[candidate_name] = 1
 
 #open file to write results to file
-Results = open('Election_Result_2.txt', 'w')
+with open('Election_Result_1.txt', 'w') as Results:
     
-#Print the header string
-print("Election Results" + '\n'
-      + "-------------------------" + '\n'
-      + "Total Votes: " + str(votes_count) + '\n'
-      + "-------------------------")
-#print result to file
-Results.write("Election Results" + '\n'
-              + "-------------------------" + '\n'
-              + "Total Votes: " + str(votes_count) + '\n'
-              + "-------------------------")
-
-for  candidate_name in candidates.keys() :
-    count_of_votes = candidates[candidate_name]
-         
-    #calculating the percentage of votes for each candidate
-    percentage = round((count_of_votes/votes_count)*100.00,2)
-    #print the result 
-    print (candidate_name + (": ") + str(percentage) +  ("% (")  + str(count_of_votes) + ")")
-    #print result to file
-    Results.write(candidate_name + (": ") + str(percentage) +  ("% (")  + str(count_of_votes) + ")")
-    #check for condition to find out winner by finding the max votes
-    if count_of_votes > max_votes_candidate :
-        max_votes_candidate = count_of_votes
-        winner = candidate_name
-print("-------------------------" + '\n'
-        + "Winner: "+ winner + '\n'
+    #Print the header string
+    print("Election Results" + '\n'
+        + "-------------------------" + '\n'
+        + "Total Votes: " + str(votes_count) + '\n'
         + "-------------------------")
-#print result to file
-Results.write("-------------------------" + '\n'
-                + "Winner: "+ winner + '\n'
+    #print result to file
+    Results.write("Election Results" + '\n'
+                + "-------------------------" + '\n'
+                + "Total Votes: " + str(votes_count) + '\n'
                 + "-------------------------")
+
+    for  candidate_name in candidates.keys() :
+        count_of_votes = candidates[candidate_name]
+            
+        #calculating the percentage of votes for each candidate
+        percentage = round((count_of_votes/votes_count)*100.00,2)
+        #print the result 
+        print (candidate_name + (": ") + str(percentage) +  ("% (")  + str(count_of_votes) + ")")
+        #print result to file
+        Results.write(candidate_name + (": ") + str(percentage) +  ("% (")  + str(count_of_votes) + ")")
+        #check for condition to find out winner by finding the max votes
+        if count_of_votes > max_votes_candidate :
+            max_votes_candidate = count_of_votes
+            winner = candidate_name
+    print("-------------------------" + '\n'
+            + "Winner: "+ winner + '\n'
+            + "-------------------------")
+    #print result to file
+    Results.write("-------------------------" + '\n'
+                    + "Winner: "+ winner + '\n'
+                    + "-------------------------")
