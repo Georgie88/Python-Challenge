@@ -64,13 +64,13 @@ print("Financial Analysis" + '\n'
       + "Greatest Decrease in Revenue: " + Gretest_Revenue_DecMonth + ", $" + str(Gretest_Revenue_Decrease))
 
 #create output file
-results_1 = open('Results_Budget_2.txt', 'w')
+with open('Results_Budget_2.txt', 'w') as results_2:
 
-#creating the output
-results_1.write("Financial Analysis" + '\n' 
-                + "-------------------------" + '\n'
-                + "Total Months: " + str(Total_Months) + '\n'
-                + "Total Revenue: $" + str(Total_Revenue) + '\n'
-                + "Average Revenue Change: $" + str(Average_Revenue_Change) + '\n'
-                + "Greatest Increase in Revenue: " + Gretest_Revenue_IncMonth + ", $" + str(Gretest_Revenue_Increase) + '\n' 
-                + "Greatest Decrease in Revenue: " + Gretest_Revenue_DecMonth + ", $" + str(Gretest_Revenue_Decrease))
+    #creating the output
+    results_2.write("Financial Analysis" + '\n' 
+                    + "-------------------------" + '\n'
+                    + "Total Months: " + str(Total_Months) + '\n'
+                    + "Total Revenue: $" + str(Total_Revenue) + '\n'
+                    + "Average Revenue Change: $" + str(Average_Revenue_Change) + '\n'
+                    + "Greatest Increase in Revenue: " + Gretest_Revenue_IncMonth + ", $" + str(Gretest_Revenue_Increase) + '\n' 
+                    + "Greatest Decrease in Revenue: " + Gretest_Revenue_DecMonth + ", $" + str(Gretest_Revenue_Decrease))
