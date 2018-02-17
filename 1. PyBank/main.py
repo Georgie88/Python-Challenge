@@ -2,7 +2,7 @@
 import csv
 
 #set file name
-file_name = 'budget_data_2.csv'
+file_name = 'budget_data_1.csv'
 
 #open a file
 with open(file_name, newline='') as csvfile:
@@ -34,7 +34,7 @@ with open(file_name, newline='') as csvfile:
             #calculate revenue change for current month
             Revenue_Change = int(row[1])-Prev_Month_Revenue
             #calculate total revenue change
-            Total_Revenue_Change = Total_Revenue_Change + Revenue_Change
+            Total_Revenue_Change = Total_Revenue_Change + abs(Revenue_Change)
             
             #comparing the current change in value to the previous greatest increase in revenue
             if Revenue_Change > Gretest_Revenue_Increase:
@@ -64,7 +64,7 @@ print("Financial Analysis" + '\n'
       + "Greatest Decrease in Revenue: " + Gretest_Revenue_DecMonth + ", $" + str(Gretest_Revenue_Decrease))
 
 #create output file
-with open('Results_Budget_2.txt', 'w') as results_2:
+with open('Results_Budget_1.txt', 'w') as results_2:
 
     #creating the output
     results_2.write("Financial Analysis" + '\n' 
