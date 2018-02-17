@@ -24,7 +24,7 @@ with open(file_name, newline='') as csvfile:
         votes_count += 1
         #storing a value in candidate per iteration for row[2]
         candidate_name = row[2]
-        #check for condition
+        #check for condition to ensure unique candidates
         if candidate_name in candidates:
             candidates[candidate_name] += 1
         else:
@@ -47,7 +47,7 @@ Results.write("Election Results" + '\n'
 for  candidate_name in candidates.keys() :
     count_of_votes = candidates[candidate_name]
          
-    #calculating the percentage and rounding of thr result to 2 places of decimal
+    #calculating the percentage of votes for each candidate
     percentage = round((count_of_votes/votes_count)*100.00,2)
     #print the result 
     print (candidate_name + (": ") + str(percentage) +  ("% (")  + str(count_of_votes) + ")")
